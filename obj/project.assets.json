@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\uno01\\unoapi\\unoapi.csproj",
+      "projectUniqueName": "E:\\unoapi\\unoapi.csproj",
       "projectName": "unoapi",
-      "projectPath": "E:\\uno01\\unoapi\\unoapi.csproj",
+      "projectPath": "E:\\unoapi\\unoapi.csproj",
       "packagesPath": "C:\\Users\\uno\\.nuget\\packages\\",
-      "outputPath": "E:\\uno01\\unoapi\\obj\\",
+      "outputPath": "E:\\unoapi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\uno\\AppData\\Roaming\\NuGet\\NuGet.Config",
