@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\test1\\unoapi.csproj": {}
+    "E:\\unoapi\\unoapi.csproj": {}
   },
   "projects": {
-    "E:\\test1\\unoapi.csproj": {
+    "E:\\unoapi\\unoapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\test1\\unoapi.csproj",
+        "projectUniqueName": "E:\\unoapi\\unoapi.csproj",
         "projectName": "unoapi",
-        "projectPath": "E:\\test1\\unoapi.csproj",
+        "projectPath": "E:\\unoapi\\unoapi.csproj",
         "packagesPath": "C:\\Users\\uno\\.nuget\\packages\\",
-        "outputPath": "E:\\test1\\obj\\",
+        "outputPath": "E:\\unoapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\uno\\AppData\\Roaming\\NuGet\\NuGet.Config",
