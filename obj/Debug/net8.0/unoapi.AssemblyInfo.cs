@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("unoapi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3b265ccd1fb3654d654482e0a68a554992bcc292")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f4dd8c4639adebcdd61ba56423f35e1e143ab08")]
 [assembly: System.Reflection.AssemblyProductAttribute("unoapi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("unoapi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
