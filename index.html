@@ -40,15 +40,21 @@
             v02:'2024-03-31',  
           }
         },
-        methods: {
+
+          methods: {
           t1(){
             alert('test');
           },
         },
-        created() {
-          v01=moment().format();  
-          console.log(v01);                                                              
+        mounted() {        
         },
+        computed: {       
+        },
+        created() {
+          this.v01=moment().format('YYYY-MM-DD');  
+          this.v02=moment().format('YYYY-MM-DD');        
+        },
+      
 
       });
       app.use(Quasar);
