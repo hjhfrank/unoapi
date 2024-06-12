@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@2.10.1")
+  -->
+
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+    <!-- example of injection point where you write your app template -->
+    <div id="q-app">   
+      <input type="date" id="vdate1" name="vdate1" v-model="v01">
+      <input type="date" id="vdate2" name="vdate2" v-model="v02">       
+      <q-btn color="primary" @click="t1">ok</q-btn>    
+    </div>   
+
+    <!-- Add the following at the end of your body tag -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.umd.prod.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+    
+    <script>
+      /*
+        Example kicking off the UI. Obviously, adapt this to your specific needs.
+        Assumes you have a <div id="q-app"></div> in your <body> above
+       */
+      const app = Vue.createApp({
+        setup () {
+          return {                   
+          }
+        },   
+        data () {
+          return {
+            k01:'ok frank',
+            v01:'2024-01-01',
+            v02:'2024-03-31',  
+          }
+        },
+        methods: {
+          t1(){
+            alert('test');
+          },
+        },
+        created() {
+          v01=moment().format();  
+          console.log(v01);                                                              
+        },
+
+      });
+      app.use(Quasar);
+      app.mount('#q-app');   
+    </script>
+  </body>
+</html>
