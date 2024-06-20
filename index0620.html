@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<!--
+    WARNING! Make sure that you match all Quasar related
+    tags to the same version! (Below it's "@2.10.1")
+  -->
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet"
+    type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.prod.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <!-- example of injection point where you write your app template -->
+  <div id="q-app">
+    <div class="row">
+      <input type="date" id="vvdate1" name="vvdate1" v-model="v01">
+      <input type="date" id="vvdate2" name="vvdate2" v-model="v02">
+      <button type="button" @click="btn1()">ok</button>
+      <button type="button" @click="btn2()">ok1</button>
+      <button type="button" @click="btn3()">ok2</button>
+      <button type="button" @click="btn4()">ok3</button>
+    </div>
+    <div id="tabsok" v-if="isshow1">
+      <div class="q-pa-md">
+        <div class="q-gutter-y-md" style="max-width: 600px">
+          <q-card>
+            <q-tabs v-model="tab" dense class="text-grey" active-color="primary" indicator-color="primary"
+              align="justify" narrow-indicator>
+              <q-tab name="tab1" label="報名狀況"></q-tab>
+              <q-tab name="tab2" label="價錢"></q-tab>
+              <q-tab name="tab3" label="旅遊區域"></q-tab>
+              <q-tab name="tab4" label="出發日期"></q-tab>
+              <q-tab name="tab5" label="航空公司"></q-tab>
+              <q-tab name="tab6" label="旅遊天數"></q-tab>
+              <q-tab name="tab7" label="關鍵字"></q-tab>
+            </q-tabs>
+
+            <q-separator></q-separator>
+
+            <q-tab-panels v-model="tab" animated>
+              <q-tab-panel name="tab1">
+                <div class="text-h6">Mails</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab2">
+                <div class="text-h6">Alarms</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab3">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab4">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab5">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab6">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+
+              <q-tab-panel name="tab7">
+                <div class="text-h6">Movies</div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </q-tab-panel>
+            </q-tab-panels>
+          </q-card>
+        </div>
+      </div>
+    </div>
+    <div id="list_s" v-if="isshow2" style="height:480px;width:800x">
+      <span>搜尋</span>
+      <div class="row">
+        <q-btn @click="btn2" label="X" style="position: absolute;right:0px"></q-btn>
+      </div>
+      <div class="row" style="height:10px"></div>
+      <div class="row">
+        關鍵字
+      </div>
+      <div class="row" style="max-width:800px">
+        <input type="text" id="vstext" name="vstext" v-model="vstext" style="width: 100%;" />
+      </div>
+      <div class="row" style="height: 5px"></div>
+      <div class="row">
+        熱門搜尋: 瑞士 克羅埃西亞 聖壇岩 美西 熱氣球 祕魯 連假 葡萄牙 義大利 埃及 軍樂節 摩洛哥
+      </div>
+      <div class="row" style="height: 5px"></div>
+      <div class="row">
+        國家地區
+      </div>
+      <div class="row" style="height: 5px;"></div>
+      <div class="row">
+        <Template v-for="g1 in listarea">
+          <div class="col-2">
+            <input type="checkbox" v-model="g1.ccc" />
+            {{ g1.S_NEWS_TITLE }}
+          </div>
+        </Template>                    
+        </div>
+      <div style="width:10px"></div>  
+      <div class="row" style="height:15px"></div>
+      <div class="row">出發日期區間</div>    
+      <div class="row">
+        出發日期
+        <input type="date" id="vvdate1" name="vvdate1" v-model="v01">
+        回程日期
+        <input type="date" id="vvdate2" name="vvdate2" v-model="v02">
+      </div>      
+      <div class="row" style="height:15px"></div>
+      <div class="row">航空公司</div>
+      <div class="row" style="max-width: 800px;">
+        <Template v-for="g1 in listair">
+          <div class="col-2">
+            <input type="checkbox" v-model="g1.ccc" />
+            {{ g1.aname }}
+          </div>
+        </Template>    
+      </div>     
+      <div class="row" style="height:15px"></div>
+      <div class="row">狀態</div>
+      <div class="row" style="max-width: 800px;">
+        <Template v-for="g1 in listsign">
+          <div class="col-2">
+            <input type="checkbox" v-model="g1.ccc" />
+            {{ g1.sname }}
+          </div>
+        </Template>           
+      </div>
+      <div class="row" style="height:15px"></div>
+      <div class="row" style="align-items: center">
+        <q-btn color="primary" @click="btn3()" label="搜尋"></q-btn>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add the following at the end of your body tag -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quasar@2.10.1/dist/quasar.umd.prod.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+  <script>
+    /*
+      Example kicking off the UI. Obviously, adapt this to your specific needs.
+      Assumes you have a <div id="q-app"></div> in your <body> above
+      初始化要載入api需要用peter方法,直接寫在setup  
+     */  
+    const app = Vue.createApp({
+      setup() {
+        const v01 = moment().add(1,'M').format('YYYY-MM-DD');
+        const v02 = moment().add(4,'M').format('YYYY-MM-DD');
+        const listarea = [];       
+        const listsign=[];
+        const listair=[];
+        return { v01,v02,listarea,listsign,listair}
+      },
+      data() {
+        return {          
+          vstext: '',
+          tab: 'tab1',        
+          isshow1: false,
+          isshow2: false,        
+          vlist:[],
+        }
+      },
+      methods: {
+        t1() {
+          alert('test');
+        },
+        btn1() {
+          this.isshow1 = !this.isshow1;
+        },
+        btn2() {
+          this.isshow2 = !this.isshow2;
+        },     
+        btn4() {
+          console.log(this.listarea);
+          console.log(this.listair);
+          console.log(this.listsign);
+        },       
+        async getlistarea() {
+          await axios.get('http://localhost:5055/list1')
+            .then((response) => {
+              this.listarea=response.data.listarea;
+              this.listair=response.data.listair;
+              this.listsign=response.data.listsign;
+            }).catch((error) => {
+              console.log(error);
+            });
+        },
+        async btn3() {
+          this.isshow2=false;
+          //搜尋預備
+          //組合條件         
+          let slist={'listarea':this.listarea,'v01':this.v01,'v02':this.v02,'listsign':this.listsign,'listair':this.listair,'keyw':this.vstext}
+          await axios.post('http://localhost:5055/list2',data=slist)
+            .then((response) => {
+              this.vlist=response.data;     
+              console.log(this.vlist);
+            }).catch((error) => {
+              console.log(error);
+          });
+        },
+      },
+      mounted() {
+        this.getlistarea();
+      },
+    });
+
+    app.use(Quasar);
+    app.mount('#q-app');   
+  </script>
+</body>
+
+</html>
