@@ -28,22 +28,35 @@ export default defineComponent({
   },
   methods: {
     btn1(nn) {
-      let n1=0;
-      if (nn == 0) { n1= 0; }
+      let n1 = 0;
+      let n2=0;
+      let n3=30;
+      if (nn == 0) { n1 = 0; }
       if (nn == -1) {
-        n1=this.npt-1;;
+        n1 = this.npt - 1;;
         if (n1 < 0) { n1 = 0; }
       }
       if (nn == 1) {
-        n1=this.npt+1;
+        n1 = this.npt + 1;
         if (n1 > 99) { n1 = 99; }
       }
       if (nn == 99) {
-        n1=99;        
+        n1 = 99;
       }
-      this.$nextTick(() => {                
-        this.npt=n1;
-        this.$refs.wt1.setCurrentRow(this.list1[this.npt]);       
+      this.$nextTick(() => {
+        this.npt = n1;
+        this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
+        if (n1<=6) {
+          this.$refs.wt1.scrollTo(0, 0);
+          this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
+        }
+        else
+        {        
+          n3=n1*40;
+          this.$refs.wt1.scrollTo(0, n3);
+          this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
+        }
+         
       });
     },
     async crtdata() {
@@ -69,4 +82,5 @@ export default defineComponent({
   },
 });
 </script>
+
 //https://blog.csdn.net/chyuanrufeng/article/details/132663139
