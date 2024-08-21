@@ -29,8 +29,8 @@ export default defineComponent({
   methods: {
     btn1(nn) {
       let n1 = 0;
-      let n2=0;
-      let n3=30;
+      let n2 = 0;
+      let n3 = 30;
       if (nn == 0) { n1 = 0; }
       if (nn == -1) {
         n1 = this.npt - 1;;
@@ -46,38 +46,28 @@ export default defineComponent({
       this.$nextTick(() => {
         this.npt = n1;
         this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
-        if (n1<=6) {
+        if (n1 <= 9) {
           this.$refs.wt1.scrollTo(0, 0);
           this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
         }
-        else
-        {        
-          n3=n1*40;
+        else {
+          n3 = n1 * 40;
           this.$refs.wt1.scrollTo(0, n3);
           this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
         }
-         
-      });
-    },
-    async crtdata() {
-      this.ex = await this.crtdata1();
-    },
-    crtdata1() {
-      return new Promise((res, rej) => {
-        axios({
-          method: 'GET',
-          url: "http://localhost:5055/listok"
-        }).then(async (res) => {
-          this.list1 = res.data.dt;
-        }).catch((error) => {
-          alert(error);
-        });
-      });
 
+      });
     },
   },
   created() {
-    this.crtdata();
+    let n1 = 0;
+    let n2 = 99;
+    let j1={}
+    while (n1 <= n2) {
+      j1={"allid":n1+1,"prodname":n1.toString()}
+      this.list1.push(j1);
+      n1++;
+    }
     this.npt = 0;
   },
 });
