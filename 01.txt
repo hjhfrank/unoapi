@@ -8,3 +8,49 @@
 這是第8次測試
 11221332112
 hjhjack1 test
+ mounted() {
+    let el = document.getElementById("mainbody");
+    if (this.$q.platform.is.mobile) {
+      el.addEventListener("touchstart", this.tch01, false);
+      el.addEventListener("touchmove", this.tch02, false);
+      el.addEventListener("touchend", this.tch03, false);
+    }
+    if (this.$q.platform.is.desktop) {
+      el.addEventListener("mousewheel", this.handleScroll1, false);
+    }
+  },
+  created() {
+    this.dt1 = Date.now();
+    this.dt2 = Date.now();
+    this.load01();
+    window.addEventListener("resize", () => {
+      let w1 = window.innerWidth > 0 ? window.innerWidth : screen.width;
+      if (w1 > 700) {
+        this.isshow = true;
+      } else {
+        this.isshow = false;
+      }
+      this.innerw = window.innerWidth;
+    });
+    let w1 = window.innerWidth > 0 ? window.innerWidth : screen.width;
+    if (w1 > 700) {
+      this.isshow = true;
+    } else {
+      this.isshow = false;
+    }
+    this.nHH = window.innerHeight;
+    this.nWW = window.innerWidth;
+    this.dt1 = Date.now();
+    this.dt2 = Date.now();
+    //this.num = this.a1.length;
+    this.hostna = this.a1[0]["hostna"];
+    this.innerw = window.innerWidth;
+    this.innerh = window.innerHeight;
+    if (this.$q.platform.is.mobile) {
+      this.nvh = "70";
+      this.innerw = window.innerWidth;
+      this.innerh = window.innerHeight;
+    }
+    this.ppic = sessionStorage.getItem("ppic");
+    this.una = sessionStorage.getItem("una");
+  },
