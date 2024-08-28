@@ -51,6 +51,7 @@ export default defineComponent({
           this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
         }
         else {
+          //el-table row height 35px最小
           n3 = n1 * 40;
           this.$refs.wt1.scrollTo(0, n3);
           this.$refs.wt1.setCurrentRow(this.list1[this.npt]);
@@ -223,6 +224,7 @@ export default defineComponent({
                     this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);
                 }
                 else {
+                    //el-table row height 35px最小
                     n3 = n1 * 40;
                     this.$refs.wt1.scrollTo(0, n3);
                     this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);
