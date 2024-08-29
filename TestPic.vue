@@ -69,18 +69,11 @@ export default defineComponent({
                 n1 = 99;
             }
             this.$nextTick(() => {
+                //el-table row min height 35px set 40px
                 this.npt = n1;
-                this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);
-                if (n1 <= 11) {
-                    this.$refs.wt1.scrollTo(0, 0);
-                    this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);
-                }
-                else {
-                    n3 = n1 * 40;
-                    this.$refs.wt1.scrollTo(0, n3);
-                    this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);
-                }
-
+                n3 = n1 * 40;
+                this.$refs.wt1.scrollTo(0, n3);
+                this.$refs.wt1.setCurrentRow(this.slist1[this.npt]);     
             });
             document.getElementById("wt1").focus();
         },
