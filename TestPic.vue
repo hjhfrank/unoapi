@@ -125,6 +125,10 @@ export default defineComponent({
         };
     },
     methods: {
+        //只限el-table
+        //el-table one row height 40 但是el-row高最低為35px,row height是抓經驗值40px
+        //這裡設定el-table height=520 有title title也算1row
+        //(520-40)/40=480/40=12
         btn1(nn) {
             //上下界指會發生在button click
             let n1 = 0;
